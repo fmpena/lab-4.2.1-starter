@@ -2,32 +2,27 @@
 <html>
 
 <head>
-    <head>
-        <title>{% block page_name %}{{ page_name }}{% endblock %}</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
+    <title>{% block page_name %}{{ page_name }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
-    <!-- The below tag is using Bulma CSS. Try replacing line 14 with line 13. -->
-    <!-- <div class="has-text-success-dark is-size-4  has-text-weight-medium"> -->
-    <div>
-        <a href="{{ url_for('home') }}">
-            Home
+<body class="section has-text-centered"> 
+
+    <div class="title is-2 has-text-primary">Frida's App</div> 
+
+    <div class="buttons is-centered mt-4"> 
+        <a class="button is-link is-light" href="{{ url_for('home') }}">
+            Frida's Home
         </a>
-        &nbsp;&nbsp;
-        <a href="{{ url_for('all_pages') }}">
+        <a class="button is-link is-light" href="{{ url_for('all_pages') }}">
             Pages
         </a>
-        &nbsp;&nbsp;
-        <a href="{{ url_for('about') }}">
+        <a class="button is-link is-light" href="{{ url_for('about') }}">
             About
         </a>
     </div>
 
-    <!-- The below tag is using Bulma CSS. Try replacing line 30 with line 29. -->
-    <!-- <div class="content"> -->
-    <div>
+    <div class="content mt-6">
         {% block content %}{{ page_content }}{% endblock %}
     </div>
 
